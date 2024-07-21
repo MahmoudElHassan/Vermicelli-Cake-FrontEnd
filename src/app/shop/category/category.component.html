@@ -1,0 +1,11 @@
+<div class="card h-100 shadow-sm" *ngIf="categories">
+
+    <div class="image position-relative h-100  shadow-sm" style="cursor: pointer;">
+        <img src="{{categories.pictureURL}}" alt="{{categories.name}}" (click)="onSearch(categories.id)" class="img-fluid w-100" >
+        <div class="d-flex flex-column align-items-center hover-overlay p-3">
+            <button (click)="onSearch(categories.id)" class="btn btn-danger">{{categories.name}}</button>
+        </div>
+    </div>
+</div>
+
+<!-- <app-product-item [categoryId]="categoryId"></app-product-item> -->

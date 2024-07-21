@@ -1,7 +1,35 @@
 <div class="mt-4" [formGroup]="checkoutForm">
-    <h4 class="m-4">Choose your Deilvery method</h4>
+    <h4 class="m-4">Choose your Deilvery Area</h4>
     <div class="row m-4" formGroupName="deliveryForm">
-        <div class="col-6 form-group" *ngFor="let method of deliveryMethods">
+        <div class="col-4 form-group" *ngFor="let method of deliveryMethods" >
+            <!-- <mat-form-field>
+                <mat-label>Select Area</mat-label>
+                <mat-select [(value)]="selected" formControName="deliveryMethod">
+                    <mat-option *ngFor="let item of deliveryMethods" [value]="item.id">{{item.area}}</mat-option>
+                </mat-select>
+              </mat-form-field> -->
+
+              <!-- <select class="form-select" >
+                <option value="">-- Choose your Area --</option>
+                <option 
+                    *ngFor="let item of deliveryMethods" 
+                    id={{item.id}}
+                    value="{{item.id}}"
+                    formControlName="deliveryMethod"
+                    >{{item.area}}</option>
+              </select> -->
+
+            <!-- <select class="form-select">
+                <option value="">-- Choose your Area --</option>
+                <option 
+                    *ngFor="let item of deliveryMethods"
+                    id={{item.id}}
+                    value={{item.id}}
+                    (click)="setShippingPrice(item)"
+                    formControlName="deliveryMethod"
+                >{{item.area}}</option>
+            </select> -->
+
             <input type="radio"
                 id={{method.id}}
                 value={{method.id}}
@@ -10,9 +38,8 @@
                 (click)="setShippingPrice(method)"
             >
             <label for="{{method.id}}" class="custom-check-label ms-2 mb-3">
-                <strong>{{method.shortName}} - {{method.price | currency}}</strong>
+                <strong>{{method.area}}</strong>
                 <br />
-                <span class="label-description">{{method.description}}</span>
             </label>
         </div>
     </div>
@@ -23,6 +50,6 @@
         <i class="fa fa-angle-left"></i> Back to address
     </button>
     <button class="btn btn-primary" cdkStepperNext>
-        Go to Review <i class="fa fa-angle-right"></i> 
+        Go to Review <i class="fa fa-angle-right"></i>
     </button>
 </div>

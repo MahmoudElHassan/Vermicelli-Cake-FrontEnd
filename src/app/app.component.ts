@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
     // if (basketId) this.basketService.getBasket(basketId);
     if (basketId) {
       this.basketService.getBasket(basketId).subscribe(() => {
-        console.log('initial list')
+        // console.log('initial list')
       }, 
       error => {
         console.log(error)

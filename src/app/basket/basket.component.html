@@ -34,20 +34,20 @@
                                         <th scope="col">
                                             <div class="p-2">
                                                 <img src="{{item.pictureUrl}}" alt="{{item.productName}}"
-                                                    class="img-fluid" style="max-height: 50px;">
+                                                    class="img-fluid p-3" style="max-height: 50px;">
                                                 <div class="ml-3 d-inline-block align-middle">
                                                     <h5 class="mb-0">
                                                         <a routerLink="/shop/{{item.id}}" class="text-dark">
                                                             {{item.productName}}</a>
                                                         <span class="text-muted font-weight-normal font-italic d-block">
-                                                            Type: {{item.type}}
+                                                            Category: {{item.category}}
                                                         </span>
                                                     </h5>
                                                 </div>
                                             </div>
                                         </th>
                                         <td class="align-middle">
-                                            <strong>{{item.price | currency}}</strong>
+                                            <strong>{{item.price}} EGP</strong>
                                         </td>
                                         <td class="align-middle">
                                             <div class="d-flex align-items-center">
@@ -61,7 +61,7 @@
                                             </div>
                                         </td>
                                         <td class="align-middle">
-                                            <strong>{{item.price * item.quantity | currency}}</strong>
+                                            <strong>{{item.price * item.quantity}} EGP</strong>
                                         </td>
                                         <td class="align-middle text-center">
                                             <a class="text-danger">
@@ -86,17 +86,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="row">
-                <div class="col-6 offset-6">
-                    <app-order-totals></app-order-totals>
-                    <div class="d-grid">
-                        <a routerLink="/checkout" class="btn btn-outline-primary py-2">
-                            Proceed to checkout
-                        </a>
-                    </div>
-                </div>
-            </div> -->
-
             </div>
         </div>
 

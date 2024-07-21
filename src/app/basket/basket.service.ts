@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map } from 'rxjs';
 import { Basket, BasketTotals, IBasket, IBasketItem } from '../shared/_models/basket';
 import { IProduct } from '../shared/_models/product';
 import { DeliveryMethod } from '../shared/_models/deliveryMethod';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +22,12 @@ export class BasketService {
   setShippingPrice(deliveryMethod: DeliveryMethod) {
     this.shipping = deliveryMethod.price;
     this.calculateTotals();
-    // const basket = this.getCurrentBasketValue();
-    // if (basket) {
-    //   basket.shippingPrice = deliveryMethod.price;
-    //   basket.deliveryMethodId = deliveryMethod.id;
-    //   this.setBasket(basket);
-    // }
+    const basket = this.getCurrentBasketValue();
+    if (basket) {
+      basket.shippingPrice = deliveryMethod.price;
+      basket.deliveryMethodId = deliveryMethod.id;
+      this.setBasket(basket);
+    }
   };
 
   getBasket(id:string){
@@ -143,9 +143,8 @@ export class BasketService {
       price: item.price,
       pictureUrl: item.pictureURL,
       quantity,
-      brand: item.productBrand,
-      type: item.productType,
-      isDelete: item.isDelete
+      category: item.category,
+      // flavor: item.flavor,
     };
   }
 

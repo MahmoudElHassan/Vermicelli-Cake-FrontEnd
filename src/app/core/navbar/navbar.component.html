@@ -1,6 +1,6 @@
-<div class="d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3
-bg-white border-bottom shadow-sm fixed-top">
-    <img src="/assets/images/logo.png" style="max-height: 70px;" class="logo" alt="logo" routerLink="/">
+<div class="navbar d-flex flex-column flex-md-row align-items-center justify-content-between p-3 px-md-4 mb-3
+ border-bottom shadow-sm fixed-top">
+    <img src="/assets/images/Vermicelli-cake-logo-removebg-preview.png" style="max-height: 70px;" class="logo" alt="logo" routerLink="/">
 
     <nav class="my-2 my-md-0 mr-md-3 text-uppercase" style="font-size: large;">
         <a class="p-2" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
@@ -8,7 +8,7 @@ bg-white border-bottom shadow-sm fixed-top">
         <a class="p-2" routerLink="/test-error" routerLinkActive="active">Error</a>
     </nav>
 
-    <div class="d-flex align-items-center">
+    <div class="d-flex align-items-center"> 
         <a routerLink="/basket" class="position-relative">
             <i class="fa fa-shopping-cart fa-2x m-3 test-dark">
                 <div *ngIf="(basket$ | async) as basket" class="cart-no">{{basket.items.length}}</div>

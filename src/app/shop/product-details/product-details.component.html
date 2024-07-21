@@ -7,8 +7,8 @@
             <h2>{{product.name}}</h2>
             <p style="font-size: 2em;">{{product.price | currency}}</p>
 
-            <h5 class="text-primary mb-3">
-                You have of this item in your basket
+            <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
+                You have {{quantityInBasket}} of this item in your basket
             </h5>
 
             <div class="d-flex justify-content-start align-items-center">
@@ -17,12 +17,12 @@
                     {{quantity}} 
                 </span>
                 <i (click)="incrementQuantity()" class="fa fa-plus-circle text-warning ms-2" style="cursor: pointer; font-size: 2em;"></i>
-                <button (click)="addItemTOBasket()" class="btn btn-outline-primary ms-4">Add Item</button>
+                <button (click)="addItemTOBasket()" class="btn btn-outline-primary ms-4">Add To Cart</button>
             </div>
-            <div class="row mt-4">
+            <!-- <div class="row mt-4">
                 <h4>Description</h4>
                 <p>{{product.description}}</p>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

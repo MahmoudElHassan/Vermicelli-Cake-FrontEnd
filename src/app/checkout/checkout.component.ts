@@ -29,10 +29,11 @@ export class CheckoutComponent {
       addressForm: this.fb.group({
         firstName: [null, Validators.required],
         lastName: [null, Validators.required],
+        phoneNumber: [null, Validators.required],
+        flat: [null, Validators.required],
+        building: [null, Validators.required],
         street: [null, Validators.required],
-        city: [null, Validators.required],
-        state: [null, Validators.required],
-        zipcode: [null, Validators.required],
+        comment: [null],
       }),
       deliveryForm: this.fb.group({
         deliveryMethod: [null, Validators.required]
@@ -51,12 +52,12 @@ export class CheckoutComponent {
     })
   }
 
-  // getDeliveryMethodValue() {
-  //   const basket = this.basketService.getCurrentBasketValue();
-  //   if (basket && basket.deliveryMethodId) {
-  //     this.checkoutForm.get('deliveryForm')?.get('deliveryMethod')
-  //       ?.patchValue(basket.deliveryMethodId.toString());
-  //   }
-  // }
+  getDeliveryMethodValue() {
+    const basket = this.basketService.getCurrentBasketValue();
+    if (basket && basket.deliveryMethodId) {
+      this.checkoutForm.get('deliveryForm')?.get('deliveryMethod')
+        ?.patchValue(basket.deliveryMethodId.toString());
+    }
+  }
 
 }

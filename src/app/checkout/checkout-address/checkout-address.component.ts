@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AccountService } from '../../account/account.service';
 import { ToastrService } from 'ngx-toastr';
+import { DeliveryMethod } from '../../shared/_models/deliveryMethod';
 
 @Component({
   selector: 'app-checkout-address',
@@ -10,6 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CheckoutAddressComponent {
   @Input() checkoutForm!: FormGroup;
+  deliveryMethods!: DeliveryMethod[];
 
   constructor(private accountService: AccountService, private toastr: ToastrService) {}
 
@@ -20,5 +22,15 @@ export class CheckoutAddressComponent {
         this.checkoutForm?.get('addressForm')?.reset(this.checkoutForm?.get('addressForm')?.value);
       }
     })
+    // this.checkoutService.getDeliveryMethods().subscribe((dm: DeliveryMethod[]) => {
+    //   this.deliveryMethods = dm
+    // },error => {
+    //   console.log(error);
+      
+    // })
   }
+
+  // setShippingPrice(deliveryMethod: DeliveryMethod) {
+  //   this.basketService.setShippingPrice(deliveryMethod);
+  // }
 }

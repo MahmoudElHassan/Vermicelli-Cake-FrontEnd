@@ -1,6 +1,6 @@
-// * {
-//     color: gray;
-// }
+.navbar {
+    background-color: rgb(236, 213, 213);
+}
 
 .cart-no {
     position: absolute;
@@ -19,7 +19,7 @@ a {
     color: #343a40;
 
     &.active {
-        color: orange
+        color: red
     }
 }
 

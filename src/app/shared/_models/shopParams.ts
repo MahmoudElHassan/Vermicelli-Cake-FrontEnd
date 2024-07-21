@@ -1,8 +1,8 @@
 export class ShopParams{
-    brandId = 0;
-    typeId = 0;
-    sort = 'name';
-    pageNumber = 1;
-    pageSize = 6;
+    categoryId = 0;
+    // flavorId = 0;
+    sort = 'name'; 
+    // pageNumber = 1;
+    // pageSize = 6;
     search!: string;
 }
