@@ -37,7 +37,8 @@ export class CheckoutReviewComponent implements OnInit{
       this.basketService.deleteLocalBasket();
       const navigationExtras: NavigationExtras = {state: order};
       this.router.navigate(['checkout/success'], navigationExtras);
-      console.log(basket);
+      this.sendWhatsApp(order);
+      console.log(order);
     }, error => {
       this.toastr.error(error.message);
       console.log(error);
@@ -54,5 +55,11 @@ export class CheckoutReviewComponent implements OnInit{
       deliveryMethodId: deliveryMethodId,
       shipToAddress: shipToAddress
     }
+  }
+
+  sendWhatsApp(order: Order) {
+    this.checkoutService.sendWhatsAppMessage(order).subscribe((result: any) => {
+      console.log(result);
+    })
   }
 }

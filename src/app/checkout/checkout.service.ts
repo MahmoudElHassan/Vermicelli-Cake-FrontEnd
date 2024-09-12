@@ -24,4 +24,9 @@ export class CheckoutService {
       })
     )
   }
+
+  sendWhatsAppMessage(order: Order) {
+    return this.http.post(this.baseUrl + 'Orders/whatsapp-message', order);
+  }
+  
 }

@@ -11,7 +11,7 @@ import { DeliveryMethod } from '../../shared/_models/deliveryMethod';
 })
 export class CheckoutAddressComponent {
   @Input() checkoutForm!: FormGroup;
-  deliveryMethods!: DeliveryMethod[];
+  //deliveryMethods!: DeliveryMethod[];
 
   constructor(private accountService: AccountService, private toastr: ToastrService) {}
 

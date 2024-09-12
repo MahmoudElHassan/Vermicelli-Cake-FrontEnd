@@ -13,7 +13,7 @@ import { error } from 'console';
 export class CheckoutDeliveryComponent {
   @Input() checkoutForm!: FormGroup;
   deliveryMethods!: DeliveryMethod[];
-  selected!: DeliveryMethod;
+  //selected!: DeliveryMethod;
   constructor(private checkoutService: CheckoutService, private basketService: BasketService) {}
 
   ngOnInit(): void {
@@ -21,7 +21,6 @@ export class CheckoutDeliveryComponent {
       this.deliveryMethods = dm
     },error => {
       console.log(error);
-      
     })
   }
 

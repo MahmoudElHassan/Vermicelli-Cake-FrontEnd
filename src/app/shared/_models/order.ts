@@ -16,7 +16,7 @@ export interface Order {
     orderItems: OrderItem[];
     subtotal: number;
     total: number;
-    status: string;
+    paymentIntentId: number;
   }
 
   export interface OrderItem {
